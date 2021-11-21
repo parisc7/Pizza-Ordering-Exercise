@@ -31,21 +31,19 @@ namespace Pizza_Ordering_Exercise
         {
             this.OrderButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.sizeFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.ingridientsFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.settingsButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.totalPriceTextBox = new System.Windows.Forms.TextBox();
-            this.settingsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.priceFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.ingridientsFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -54,7 +52,8 @@ namespace Pizza_Ordering_Exercise
             // 
             // OrderButton
             // 
-            this.OrderButton.BackColor = System.Drawing.Color.SeaShell;
+            this.OrderButton.BackColor = System.Drawing.Color.LightGray;
+            this.OrderButton.ForeColor = System.Drawing.Color.Chocolate;
             this.OrderButton.Location = new System.Drawing.Point(843, 337);
             this.OrderButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.OrderButton.Name = "OrderButton";
@@ -66,7 +65,8 @@ namespace Pizza_Ordering_Exercise
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.priceFlowLayoutPanel);
+            this.groupBox1.Controls.Add(this.sizeFlowLayoutPanel);
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.groupBox1.Location = new System.Drawing.Point(28, 119);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
@@ -75,6 +75,15 @@ namespace Pizza_Ordering_Exercise
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Size";
+            // 
+            // sizeFlowLayoutPanel
+            // 
+            this.sizeFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sizeFlowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.sizeFlowLayoutPanel.Location = new System.Drawing.Point(3, 17);
+            this.sizeFlowLayoutPanel.Name = "sizeFlowLayoutPanel";
+            this.sizeFlowLayoutPanel.Size = new System.Drawing.Size(220, 223);
+            this.sizeFlowLayoutPanel.TabIndex = 0;
             // 
             // groupBox2
             // 
@@ -87,14 +96,22 @@ namespace Pizza_Ordering_Exercise
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Ingridients (Free Up to 3)";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // ingridientsFlowLayoutPanel
+            // 
+            this.ingridientsFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ingridientsFlowLayoutPanel.Location = new System.Drawing.Point(3, 17);
+            this.ingridientsFlowLayoutPanel.Name = "ingridientsFlowLayoutPanel";
+            this.ingridientsFlowLayoutPanel.Size = new System.Drawing.Size(459, 276);
+            this.ingridientsFlowLayoutPanel.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Stencil", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(43, 57);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(151, 16);
+            this.label1.Size = new System.Drawing.Size(380, 35);
             this.label1.TabIndex = 3;
             this.label1.Text = "Welocme to PizzaMania";
             // 
@@ -138,18 +155,10 @@ namespace Pizza_Ordering_Exercise
             this.maskedTextBox1.TabIndex = 8;
             this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
             // 
-            // settingsButton
-            // 
-            this.settingsButton.Location = new System.Drawing.Point(313, 23);
-            this.settingsButton.Name = "settingsButton";
-            this.settingsButton.Size = new System.Drawing.Size(103, 37);
-            this.settingsButton.TabIndex = 9;
-            this.settingsButton.Text = "Settings";
-            this.settingsButton.UseVisualStyleBackColor = true;
-            // 
             // exitButton
             // 
-            this.exitButton.BackColor = System.Drawing.Color.SeaShell;
+            this.exitButton.BackColor = System.Drawing.Color.LightGray;
+            this.exitButton.ForeColor = System.Drawing.Color.Chocolate;
             this.exitButton.Location = new System.Drawing.Point(843, 393);
             this.exitButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.exitButton.Name = "exitButton";
@@ -161,18 +170,19 @@ namespace Pizza_Ordering_Exercise
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.Gray;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.settingsToolStripMenuItem1});
+            this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1044, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1046, 28);
             this.menuStrip1.TabIndex = 12;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
+            this.fileToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.settingsToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
@@ -181,8 +191,9 @@ namespace Pizza_Ordering_Exercise
             // 
             // settingsToolStripMenuItem
             // 
+            this.settingsToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlDark;
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(145, 26);
             this.settingsToolStripMenuItem.Text = "&Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
@@ -193,38 +204,14 @@ namespace Pizza_Ordering_Exercise
             this.totalPriceTextBox.Size = new System.Drawing.Size(100, 22);
             this.totalPriceTextBox.TabIndex = 13;
             // 
-            // settingsToolStripMenuItem1
-            // 
-            this.settingsToolStripMenuItem1.Name = "settingsToolStripMenuItem1";
-            this.settingsToolStripMenuItem1.Size = new System.Drawing.Size(76, 24);
-            this.settingsToolStripMenuItem1.Text = "&Settings";
-            // 
-            // priceFlowLayoutPanel
-            // 
-            this.priceFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.priceFlowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.priceFlowLayoutPanel.Location = new System.Drawing.Point(3, 17);
-            this.priceFlowLayoutPanel.Name = "priceFlowLayoutPanel";
-            this.priceFlowLayoutPanel.Size = new System.Drawing.Size(220, 223);
-            this.priceFlowLayoutPanel.TabIndex = 0;
-            // 
-            // ingridientsFlowLayoutPanel
-            // 
-            this.ingridientsFlowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ingridientsFlowLayoutPanel.Location = new System.Drawing.Point(3, 17);
-            this.ingridientsFlowLayoutPanel.Name = "ingridientsFlowLayoutPanel";
-            this.ingridientsFlowLayoutPanel.Size = new System.Drawing.Size(459, 276);
-            this.ingridientsFlowLayoutPanel.TabIndex = 0;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.GhostWhite;
-            this.ClientSize = new System.Drawing.Size(1044, 480);
+            this.BackColor = System.Drawing.Color.Chocolate;
+            this.ClientSize = new System.Drawing.Size(1046, 452);
             this.Controls.Add(this.totalPriceTextBox);
             this.Controls.Add(this.exitButton);
-            this.Controls.Add(this.settingsButton);
             this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label6);
@@ -238,6 +225,7 @@ namespace Pizza_Ordering_Exercise
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Order";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
@@ -260,15 +248,13 @@ namespace Pizza_Ordering_Exercise
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.Button settingsButton;
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.TextBox totalPriceTextBox;
-        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem1;
-        private System.Windows.Forms.FlowLayoutPanel priceFlowLayoutPanel;
+        private System.Windows.Forms.FlowLayoutPanel sizeFlowLayoutPanel;
         private System.Windows.Forms.FlowLayoutPanel ingridientsFlowLayoutPanel;
     }
 }

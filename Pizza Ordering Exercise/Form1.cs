@@ -1,4 +1,6 @@
-﻿using DocumentFormat.OpenXml.Spreadsheet;
+﻿using AjaxControlToolkit;
+using DocumentFormat.OpenXml.Spreadsheet;
+using SolrNet.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,191 +16,90 @@ namespace Pizza_Ordering_Exercise
     public partial class Form1 : Form
     {
         public double totalPrice = 0;
-
+        public DataGridView pizzaSizeDataGridView { get; }
+        public SettingsForm SettingsForm = new SettingsForm();
 
         public Form1()
         {
             InitializeComponent();
+            InitializeSizes();
+            InitializeIngridients();
         }
 
+        private void InitializeIngridients()
+        {
+            ingridientsFlowLayoutPanel.Controls.Clear();
 
+
+            foreach (var ingridients in SettingsForm.pizzaIngridients.OrderBy(x => x.Name))
+            {
+                var ingridientsCheckBox = new CheckBox();
+                {
+                    Text = ingridients.Name;
+                    Tag = ingridients;
+                    AutoSize = true;
+                };
+
+                ingridientsCheckBox.CheckedChanged += IngridientsCheckBox_CheckedChanged;
+
+                ingridientsFlowLayoutPanel.Controls.Add(ingridientsCheckBox);
+
+            }
+        }
+
+        private void IngridientsCheckBox_CheckedChanged(object sender, System.EventArgs e)
+        {
+            var ingridientsCheckBox = (sender as CheckBox);
+            var ingridients = ingridientsCheckBox.Tag as PizzaSize;
+
+            MessageBox.Show($"{ingridients.Name}{ingridients.Price} Checked : {ingridientsCheckBox.Checked}");
+        }
+
+        private void InitializeSizes()
+        {
+            sizeFlowLayoutPanel.Controls.Clear();
+
+
+            foreach (var sizes in SettingsForm.pizzaSizes.OrderBy(x => x.Name))
+            {
+                var sizesRadioButton = new RadioButton();
+                {
+                    Text = sizes.Name;
+                    Tag = sizes;
+                    AutoSize = true;
+                };
+
+                sizesRadioButton.CheckedChanged += SizesRadioButton_CheckedChanged;
+
+                sizeFlowLayoutPanel.Controls.Add(sizesRadioButton);
+
+            }
+        }
+
+        private void SizesRadioButton_CheckedChanged(object sender, System.EventArgs e)
+        {
+            var sizeRadioButton=(sender as RadioButton);
+            var sizes = sizeRadioButton.Tag as PizzaSize;
+
+            MessageBox.Show($"{sizes.Name}{sizes.Price} Checked : {sizeRadioButton.Checked}");
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-          for(int i =0; i < 4; i++)
-            {
-                RadioButton radioButton = new RadioButton();
-
-                radioButton.Text = $"";
-
-
-
-                priceFlowLayoutPanel.Controls.Add(radioButton);
-
-
-            }
-
-          for(int j =0; j < 10; j++)
-            {
-                CheckBox checkBox = new CheckBox();
-
-                checkBox.Text = $"";
-
-
-
-                ingridientsFlowLayoutPanel.Controls.Add(checkBox);
-            }
-
-        }
-
-       
-
-        private void CheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            var checkBox = (sender as CheckBox);
-
-            MessageBox.Show(checkBox.Text + " : " + checkBox.Checked);
-        }
-
-         private void settingsButton_Click(object sender, EventArgs e)
-        {
-         
+          
         }
 
         private void OrderButton_Click(object sender, EventArgs e)
         {
-            /*/Pizza Ingridients selection
-
-            if (basilCheckBox.Checked==true)
-            {
-                ListViewItem ingridient = new ListViewItem(" Basil");
-                ingridient.SubItems.Add("");
-                ingridient.SubItems.Add("0.75");
-                listView1.Items.Add(ingridient);
-            }
-            if (blackOlivesCheckBox.Checked == true)
-            {
-                ListViewItem ingridient = new ListViewItem(" Black Olives");
-                ingridient.SubItems.Add("");
-                ingridient.SubItems.Add("0.75");
-                listView1.Items.Add(ingridient);
-            }
-            if (chickenCheckBox.Checked == true)
-            {
-                ListViewItem ingridient = new ListViewItem(" Chicken");
-                ingridient.SubItems.Add("");
-                ingridient.SubItems.Add("0.75");
-                listView1.Items.Add(ingridient);
-            }
-            if (crushedRedPepperCheckBox.Checked == true)
-            {
-                ListViewItem ingridient = new ListViewItem(" Crushed Red Pepper");
-                ingridient.SubItems.Add("");
-                ingridient.SubItems.Add("0.75");
-                listView1.Items.Add(ingridient);
-            }
-            if (eggCheckBox.Checked == true)
-            {
-                ListViewItem ingridient = new ListViewItem(" Egg");
-                ingridient.SubItems.Add("");
-                ingridient.SubItems.Add("0.75");
-                listView1.Items.Add(ingridient);
-            }
-            if (eggplantCheckBox.Checked == true)
-            {
-                ListViewItem ingridient = new ListViewItem(" Eggplant");
-                ingridient.SubItems.Add("");
-                ingridient.SubItems.Add("0.75");
-                listView1.Items.Add(ingridient);
-            }
-            if (garlicCheckBox.Checked == true)
-            {
-                ListViewItem ingridient = new ListViewItem(" Garlic");
-                ingridient.SubItems.Add("");
-                ingridient.SubItems.Add("0.75");
-                listView1.Items.Add(ingridient);
-            }
-            if (greenBellPepperCheckBox.Checked == true)
-            {
-                ListViewItem ingridient = new ListViewItem(" Green Bell Pepper");
-                ingridient.SubItems.Add("");
-                ingridient.SubItems.Add("0.75");
-                listView1.Items.Add(ingridient);
-            }
-            if (hotSauceCheckBox.Checked == true)
-            {
-                ListViewItem ingridient = new ListViewItem(" Hot Sauce");
-                ingridient.SubItems.Add("");
-                ingridient.SubItems.Add("0.75");
-                listView1.Items.Add(ingridient);
-            }
-            if (jalapenoCheckBox.Checked == true)
-            {
-                ListViewItem ingridient = new ListViewItem(" Jalapeno");
-                ingridient.SubItems.Add("");
-                ingridient.SubItems.Add("0.75");
-                listView1.Items.Add(ingridient);
-            }
-            if (mozarellaCheckBox.Checked == true)
-            {
-                ListViewItem ingridient = new ListViewItem(" Mozarella");
-                ingridient.SubItems.Add("");
-                ingridient.SubItems.Add("0.75");
-                listView1.Items.Add(ingridient);
-            }
-            if (mushroomCheckBox.Checked == true)
-            {
-                ListViewItem ingridient = new ListViewItem(" Mushroom");
-                ingridient.SubItems.Add("");
-                ingridient.SubItems.Add("0.75");
-                listView1.Items.Add(ingridient);
-            }
-            if (oliveOilCheckBox.Checked == true)
-            {
-                ListViewItem ingridient = new ListViewItem(" Olive Oil");
-                ingridient.SubItems.Add("");
-                ingridient.SubItems.Add("0.75");
-                listView1.Items.Add(ingridient);
-            }
-            if (onionCheckBox.Checked == true)
-            {
-                ListViewItem ingridient = new ListViewItem(" Onion");
-                ingridient.SubItems.Add("");
-                ingridient.SubItems.Add("0.75");
-                listView1.Items.Add(ingridient);
-            }
-            if (oreganoCheckBox.Checked == true)
-            {
-                ListViewItem ingridient = new ListViewItem(" Oregano");
-                ingridient.SubItems.Add("");
-                ingridient.SubItems.Add("0.75");
-                listView1.Items.Add(ingridient);
-            }
-            if (parmigianoCheckBox.Checked == true)
-            {
-                ListViewItem ingridient = new ListViewItem(" Parmigiano-Reggiano");
-                ingridient.SubItems.Add("");
-                ingridient.SubItems.Add("0.75");
-                listView1.Items.Add(ingridient);
-            }
-
-            */
+           
 
 
-            foreach (ListViewItem item in listView1.Items)
-            {
-                totalPrice += Convert.ToDouble(item.SubItems[2].Text);
-            }
-
-            string amount = totalPrice.ToString("c2");
-
-            totalPriceTextBox.Text = amount;
 
         }
 
         private void exitButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -207,9 +108,6 @@ namespace Pizza_Ordering_Exercise
             settingForm.ShowDialog();
         }
 
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

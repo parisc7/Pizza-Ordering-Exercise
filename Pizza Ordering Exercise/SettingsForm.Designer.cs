@@ -57,22 +57,28 @@ namespace Pizza_Ordering_Exercise
             // 
             // sizesResetButton
             // 
+            this.sizesResetButton.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.sizesResetButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sizesResetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sizesResetButton.Location = new System.Drawing.Point(250, 467);
             this.sizesResetButton.Name = "sizesResetButton";
             this.sizesResetButton.Size = new System.Drawing.Size(138, 41);
             this.sizesResetButton.TabIndex = 2;
             this.sizesResetButton.Text = "&Reset";
-            this.sizesResetButton.UseVisualStyleBackColor = true;
+            this.sizesResetButton.UseVisualStyleBackColor = false;
             this.sizesResetButton.Click += new System.EventHandler(this.sizesResetButton_Click);
             // 
             // sizesSaveButton
             // 
+            this.sizesSaveButton.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.sizesSaveButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sizesSaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.sizesSaveButton.Location = new System.Drawing.Point(87, 467);
             this.sizesSaveButton.Name = "sizesSaveButton";
             this.sizesSaveButton.Size = new System.Drawing.Size(138, 41);
             this.sizesSaveButton.TabIndex = 1;
             this.sizesSaveButton.Text = "&Save";
-            this.sizesSaveButton.UseVisualStyleBackColor = true;
+            this.sizesSaveButton.UseVisualStyleBackColor = false;
             this.sizesSaveButton.Click += new System.EventHandler(this.sizesSaveButton_Click);
             // 
             // pizzaSizeDataGridView
@@ -99,21 +105,29 @@ namespace Pizza_Ordering_Exercise
             // 
             // ingridientsResetButton
             // 
+            this.ingridientsResetButton.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.ingridientsResetButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ingridientsResetButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.ingridientsResetButton.Location = new System.Drawing.Point(328, 467);
             this.ingridientsResetButton.Name = "ingridientsResetButton";
             this.ingridientsResetButton.Size = new System.Drawing.Size(120, 41);
             this.ingridientsResetButton.TabIndex = 2;
-            this.ingridientsResetButton.Text = "&Reset";
-            this.ingridientsResetButton.UseVisualStyleBackColor = true;
+            this.ingridientsResetButton.Text = "R&eset";
+            this.ingridientsResetButton.UseVisualStyleBackColor = false;
+            this.ingridientsResetButton.Click += new System.EventHandler(this.ingridientsResetButton_Click);
             // 
             // ingridientsSaveButton
             // 
+            this.ingridientsSaveButton.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.ingridientsSaveButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ingridientsSaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.ingridientsSaveButton.Location = new System.Drawing.Point(157, 467);
             this.ingridientsSaveButton.Name = "ingridientsSaveButton";
             this.ingridientsSaveButton.Size = new System.Drawing.Size(130, 41);
             this.ingridientsSaveButton.TabIndex = 1;
-            this.ingridientsSaveButton.Text = "&Save";
-            this.ingridientsSaveButton.UseVisualStyleBackColor = true;
+            this.ingridientsSaveButton.Text = "S&ave";
+            this.ingridientsSaveButton.UseVisualStyleBackColor = false;
+            this.ingridientsSaveButton.Click += new System.EventHandler(this.ingridientsSaveButton_Click);
             // 
             // IngridientsDataGridView
             // 
@@ -129,10 +143,13 @@ namespace Pizza_Ordering_Exercise
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1147, 551);
+            this.ClientSize = new System.Drawing.Size(1131, 551);
             this.Controls.Add(this.IngridientsGroupBox);
             this.Controls.Add(this.sizesGroupBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "SettingsForm";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SettingsForm";
             this.Load += new System.EventHandler(this.SettingsForm_Load);
             this.sizesGroupBox.ResumeLayout(false);

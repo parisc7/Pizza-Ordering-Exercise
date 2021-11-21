@@ -18,14 +18,15 @@ namespace Pizza_Ordering_Exercise
         public List<PizzaSize> pizzaSizes = new List<PizzaSize>();
         public List<Ingridients> pizzaIngridients = new List<Ingridients>();
         const string PizzaSizesFile = "PizzaFile_json";
-        
+        const string PizzaIngridientsFile = "PizzaIngridientsFile_json";
+
 
         public SettingsForm()
         {
             InitializeComponent();
+          //  LoadSizes();
+           // LoadIngridients();
         }
-
-       
 
         private void SettingsForm_Load(object sender, EventArgs e)
         {
@@ -42,13 +43,19 @@ namespace Pizza_Ordering_Exercise
             pizzaIngridients.Add(new Ingridients("Mushroom", 0.75));
             pizzaIngridients.Add(new Ingridients("Pepper", 1.25));
             pizzaIngridients.Add(new Ingridients("Onion", 1));
+            pizzaIngridients.Add(new Ingridients("Basil", 1));
+            pizzaIngridients.Add(new Ingridients("Ham", 1));
+            pizzaIngridients.Add(new Ingridients("Chicken", 1));
+            pizzaIngridients.Add(new Ingridients("Oregano", 1));
+            pizzaIngridients.Add(new Ingridients("Bacon", 1));
+            pizzaIngridients.Add(new Ingridients("Garlic", 1));
+            pizzaIngridients.Add(new Ingridients("Mozarella", 1));
+            pizzaIngridients.Add(new Ingridients("Pepperoni", 1));
+            pizzaIngridients.Add(new Ingridients("Tomato", 1));
+            pizzaIngridients.Add(new Ingridients("Shrimps", 1));
+            pizzaIngridients.Add(new Ingridients("Olives", 1));
 
             IngridientsDataGridView.DataSource = new BindingList<Ingridients>(pizzaIngridients);
-
-
-            var serializedSize = JsonConvert.SerializeObject(pizzaSizes);
-            File.WriteAllText(PizzaSizesFile, serializedSize, Encoding.UTF8);
-
 
         }
 
@@ -56,13 +63,66 @@ namespace Pizza_Ordering_Exercise
 
         private void sizesSaveButton_Click(object sender, EventArgs e)
         {
-            //SaveSize();
-            MessageBox.Show("Successfully saved the Pizza Sizes.", "Success", MessageBoxButtons.OK);
+            SaveSize();
         }
 
         private void sizesResetButton_Click(object sender, EventArgs e)
         {
-           // LoadSizes();
+            LoadSizes();
+        }
+
+        private void SaveSize()
+        {
+            var serializedSize = JsonConvert.SerializeObject(pizzaSizes);
+            File.WriteAllText(PizzaSizesFile, serializedSize, Encoding.UTF8);
+            MessageBox.Show("Successfully saved the Pizza Sizes.", "Success", MessageBoxButtons.OK);
+        }
+
+        private void LoadSizes()
+        {
+            if(File.Exists(PizzaSizesFile))
+            {
+                var jsonString = File.ReadAllText(PizzaSizesFile);
+                pizzaSizes = JsonConvert.DeserializeObject<List<PizzaSize>>(jsonString);
+            }
+            else
+            {
+                pizzaSizes = new List<PizzaSize>();
+
+                pizzaSizeDataGridView.DataSource = new BindingList<PizzaSize>(pizzaSizes);
+            }
+        }
+
+        private void ingridientsSaveButton_Click(object sender, EventArgs e)
+        {
+            SaveIngridient();
+        }
+
+        private void SaveIngridient()
+        {
+            var serializedSize = JsonConvert.SerializeObject(pizzaIngridients);
+            File.WriteAllText(PizzaIngridientsFile, serializedSize, Encoding.UTF8);
+            MessageBox.Show("Successfully saved the Ingridients.", "Success", MessageBoxButtons.OK);
+        }
+
+        private void ingridientsResetButton_Click(object sender, EventArgs e)
+        {
+            LoadIngridients();
+        }
+
+        private void LoadIngridients()
+        {
+            if (File.Exists(PizzaIngridientsFile))
+            {
+                var jsonString = File.ReadAllText(PizzaIngridientsFile);
+                pizzaIngridients = JsonConvert.DeserializeObject<List<Ingridients>>(jsonString);
+            }
+            else
+            {
+                pizzaIngridients = new List<Ingridients>();
+
+                IngridientsDataGridView.DataSource = new BindingList<Ingridients>(pizzaIngridients);
+            }
         }
     }
     
