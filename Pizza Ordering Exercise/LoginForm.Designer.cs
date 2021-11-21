@@ -162,7 +162,7 @@
             this.exitButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
             this.exitButton.Location = new System.Drawing.Point(172, 522);
             this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(63, 31);
+            this.exitButton.Size = new System.Drawing.Size(76, 31);
             this.exitButton.TabIndex = 7;
             this.exitButton.Text = "EXIT";
             this.exitButton.UseVisualStyleBackColor = true;

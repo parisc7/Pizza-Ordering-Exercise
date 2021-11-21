@@ -22,9 +22,8 @@ namespace Pizza_Ordering_Exercise
             if (nameTextBox.Text == "admin" && passworTextBox.Text == "admin")
             {
                 new MainForm().ShowDialog();
-                this.Hide();
+                this.Close();
             }
-
             else
             {
                 MessageBox.Show("The User name or password you entered is incorrect, try again");

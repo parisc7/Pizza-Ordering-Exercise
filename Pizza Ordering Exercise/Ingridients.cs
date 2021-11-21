@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,9 +15,10 @@ namespace Pizza_Ordering_Exercise
             Price = price;
         }
 
+        [JsonProperty("name")]
         public string Name { get; set; }
 
-
+        [JsonProperty("price")]
         public double Price { get; set; }
 
     }
