@@ -19,7 +19,7 @@ namespace Pizza_Ordering_Exercise.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -57,6 +57,27 @@ namespace Pizza_Ordering_Exercise.Properties {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap istockphoto_1270368615_170667a {
+            get {
+                object obj = ResourceManager.GetObject("istockphoto-1270368615-170667a", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap padlock_security_shield_lock_protection_icon_logo_beautiful_design_fully_editable_commercial_print_media_web_any_166831929 {
+            get {
+                object obj = ResourceManager.GetObject("padlock-security-shield-lock-protection-icon-logo-beautiful-design-fully-editable" +
+                        "-commercial-print-media-web-any-166831929", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

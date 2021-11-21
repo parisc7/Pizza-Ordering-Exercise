@@ -1,7 +1,7 @@
 ﻿
 namespace Pizza_Ordering_Exercise
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.

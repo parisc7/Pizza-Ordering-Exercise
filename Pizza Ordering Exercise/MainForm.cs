@@ -13,13 +13,13 @@ using System.Windows.Forms;
 
 namespace Pizza_Ordering_Exercise
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         public double totalPrice = 0;
         public DataGridView pizzaSizeDataGridView { get; }
         public SettingsForm SettingsForm = new SettingsForm();
 
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
             InitializeSizes();
@@ -52,7 +52,7 @@ namespace Pizza_Ordering_Exercise
             var ingridientsCheckBox = (sender as CheckBox);
             var ingridients = ingridientsCheckBox.Tag as PizzaSize;
 
-            MessageBox.Show($"{ingridients.Name}{ingridients.Price} Checked : {ingridientsCheckBox.Checked}");
+         //   MessageBox.Show($"{ingridients.Name}{ingridients.Price} Checked : {ingridientsCheckBox.Checked}");
         }
 
         private void InitializeSizes()
@@ -81,7 +81,7 @@ namespace Pizza_Ordering_Exercise
             var sizeRadioButton=(sender as RadioButton);
             var sizes = sizeRadioButton.Tag as PizzaSize;
 
-            MessageBox.Show($"{sizes.Name}{sizes.Price} Checked : {sizeRadioButton.Checked}");
+           // MessageBox.Show($"{sizes.Name}{sizes.Price} Checked : {sizeRadioButton.Checked}");
         }
 
         private void Form1_Load(object sender, EventArgs e)
