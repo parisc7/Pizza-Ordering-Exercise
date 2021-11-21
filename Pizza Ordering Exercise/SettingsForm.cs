@@ -24,8 +24,8 @@ namespace Pizza_Ordering_Exercise
         public SettingsForm()
         {
             InitializeComponent();
-          //  LoadSizes();
-           // LoadIngridients();
+            LoadSizes();
+            LoadIngridients();
         }
 
         private void SettingsForm_Load(object sender, EventArgs e)
@@ -87,7 +87,7 @@ namespace Pizza_Ordering_Exercise
             }
             else
             {
-                pizzaSizes = new List<PizzaSize>();
+                pizzaSizes.Clear();
 
                 pizzaSizeDataGridView.DataSource = new BindingList<PizzaSize>(pizzaSizes);
             }
@@ -103,6 +103,7 @@ namespace Pizza_Ordering_Exercise
             var serializedSize = JsonConvert.SerializeObject(pizzaIngridients);
             File.WriteAllText(PizzaIngridientsFile, serializedSize, Encoding.UTF8);
             MessageBox.Show("Successfully saved the Ingridients.", "Success", MessageBoxButtons.OK);
+
         }
 
         private void ingridientsResetButton_Click(object sender, EventArgs e)
@@ -119,9 +120,10 @@ namespace Pizza_Ordering_Exercise
             }
             else
             {
-                pizzaIngridients = new List<Ingridients>();
+                pizzaIngridients.Clear();
 
                 IngridientsDataGridView.DataSource = new BindingList<Ingridients>(pizzaIngridients);
+
             }
         }
     }

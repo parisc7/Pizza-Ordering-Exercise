@@ -33,11 +33,11 @@ namespace Pizza_Ordering_Exercise
 
             foreach (var ingridients in SettingsForm.pizzaIngridients.OrderBy(x => x.Name))
             {
-                var ingridientsCheckBox = new CheckBox();
+                var ingridientsCheckBox = new CheckBox
                 {
-                    Text = ingridients.Name;
-                    Tag = ingridients;
-                    AutoSize = true;
+                    Text = ingridients.Name,
+                    Tag = ingridients,
+                    AutoSize = true,
                 };
 
                 ingridientsCheckBox.CheckedChanged += IngridientsCheckBox_CheckedChanged;
@@ -62,12 +62,12 @@ namespace Pizza_Ordering_Exercise
 
             foreach (var sizes in SettingsForm.pizzaSizes.OrderBy(x => x.Name))
             {
-                var sizesRadioButton = new RadioButton();
+                var sizesRadioButton = new RadioButton
                 {
-                    Text = sizes.Name;
-                    Tag = sizes;
-                    AutoSize = true;
-                };
+                Text = sizes.Name,
+                Tag = sizes,
+                AutoSize = true,
+            };
 
                 sizesRadioButton.CheckedChanged += SizesRadioButton_CheckedChanged;
 
@@ -108,6 +108,5 @@ namespace Pizza_Ordering_Exercise
             settingForm.ShowDialog();
         }
 
-       
     }
 }
