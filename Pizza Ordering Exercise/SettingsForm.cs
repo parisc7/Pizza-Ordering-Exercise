@@ -24,24 +24,24 @@ namespace Pizza_Ordering_Exercise
         public SettingsForm()
         {
             InitializeComponent();
+            InitializeSize();
+            InitializeIngridients();
             LoadSizes();
             LoadIngridients();
         }
 
-        private void SettingsForm_Load(object sender, EventArgs e)
+        private void InitializeSize()
         {
-            
-
             pizzaSizes.Add(new PizzaSize("Small", 6.5, 2));
             pizzaSizes.Add(new PizzaSize("Medium", 9.25, 3));
             pizzaSizes.Add(new PizzaSize("Large", 12.00, 3));
             pizzaSizes.Add(new PizzaSize("XLarge", 13.75, 3));
+        }
 
-            pizzaSizeDataGridView.DataSource = new BindingList<PizzaSize>(pizzaSizes);
-
-
-            pizzaIngridients.Add(new Ingridients("Mushroom", 0.75));
-            pizzaIngridients.Add(new Ingridients("Pepper", 1.25));
+        private void InitializeIngridients()
+        {
+            pizzaIngridients.Add(new Ingridients("Mushroom", 1));
+            pizzaIngridients.Add(new Ingridients("Pepper", 1));
             pizzaIngridients.Add(new Ingridients("Onion", 1));
             pizzaIngridients.Add(new Ingridients("Basil", 1));
             pizzaIngridients.Add(new Ingridients("Ham", 1));
@@ -54,12 +54,17 @@ namespace Pizza_Ordering_Exercise
             pizzaIngridients.Add(new Ingridients("Tomato", 1));
             pizzaIngridients.Add(new Ingridients("Shrimps", 1));
             pizzaIngridients.Add(new Ingridients("Olives", 1));
+        }
+
+        private void SettingsForm_Load(object sender, EventArgs e)
+        {
+
+            pizzaSizeDataGridView.DataSource = new BindingList<PizzaSize>(pizzaSizes);
 
             IngridientsDataGridView.DataSource = new BindingList<Ingridients>(pizzaIngridients);
 
         }
-
-
+    
 
         private void sizesSaveButton_Click(object sender, EventArgs e)
         {

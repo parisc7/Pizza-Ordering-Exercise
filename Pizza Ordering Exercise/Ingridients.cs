@@ -9,6 +9,7 @@ namespace Pizza_Ordering_Exercise
 {
     public class Ingridients
     {
+
         public Ingridients(string name,double price)
         {
             Name = name;
@@ -20,6 +21,12 @@ namespace Pizza_Ordering_Exercise
 
         [JsonProperty("price")]
         public double Price { get; set; }
+
+
+        Ingridients()
+        {
+
+        }
 
     }
 }

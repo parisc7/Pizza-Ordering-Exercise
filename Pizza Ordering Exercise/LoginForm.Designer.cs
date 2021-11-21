@@ -112,7 +112,7 @@
             this.logInButton.Location = new System.Drawing.Point(39, 480);
             this.logInButton.Name = "logInButton";
             this.logInButton.Size = new System.Drawing.Size(327, 36);
-            this.logInButton.TabIndex = 4;
+            this.logInButton.TabIndex = 7;
             this.logInButton.Text = "LOG IN";
             this.logInButton.UseVisualStyleBackColor = false;
             this.logInButton.Click += new System.EventHandler(this.logInButton_Click);
@@ -127,7 +127,7 @@
             this.clearLabel.Location = new System.Drawing.Point(281, 452);
             this.clearLabel.Name = "clearLabel";
             this.clearLabel.Size = new System.Drawing.Size(111, 20);
-            this.clearLabel.TabIndex = 5;
+            this.clearLabel.TabIndex = 1;
             this.clearLabel.Text = "Clear Fields";
             this.clearLabel.Click += new System.EventHandler(this.clearLabel_Click);
             // 
@@ -139,6 +139,7 @@
             this.passworTextBox.Location = new System.Drawing.Point(84, 411);
             this.passworTextBox.Multiline = true;
             this.passworTextBox.Name = "passworTextBox";
+            this.passworTextBox.PasswordChar = '*';
             this.passworTextBox.Size = new System.Drawing.Size(250, 26);
             this.passworTextBox.TabIndex = 6;
             // 
@@ -156,6 +157,7 @@
             // exitButton
             // 
             this.exitButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.exitButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.exitButton.FlatAppearance.BorderSize = 0;
             this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -173,6 +175,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.exitButton;
             this.ClientSize = new System.Drawing.Size(422, 583);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.nameTextBox);

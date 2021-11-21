@@ -60,22 +60,22 @@ namespace Pizza_Ordering_Exercise
             sizeFlowLayoutPanel.Controls.Clear();
 
 
-            foreach (var sizes in SettingsForm.pizzaSizes.OrderBy(x => x.Name))
+            foreach (var sizes in SettingsForm.pizzaSizes)
             {
                 var sizesRadioButton = new RadioButton
                 {
-                Text = sizes.Name,
-                Tag = sizes,
-                AutoSize = true,
-            };
-
+                    Text = sizes.Name,
+                    Tag = sizes,
+                    AutoSize = true,
+                };
+            
                 sizesRadioButton.CheckedChanged += SizesRadioButton_CheckedChanged;
 
                 sizeFlowLayoutPanel.Controls.Add(sizesRadioButton);
 
             }
         }
-
+         
         private void SizesRadioButton_CheckedChanged(object sender, System.EventArgs e)
         {
             var sizeRadioButton=(sender as RadioButton);

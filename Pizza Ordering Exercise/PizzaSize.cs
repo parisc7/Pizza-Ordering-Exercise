@@ -9,6 +9,7 @@ namespace Pizza_Ordering_Exercise
 {
     public class PizzaSize
     { 
+       
 
         public PizzaSize(string name, double price, int freeIngridientCount)
         {
@@ -25,6 +26,12 @@ namespace Pizza_Ordering_Exercise
 
         [JsonProperty("freeIngridientCount")]
         public int FreeIngridientCount { get; set; }
-    
+
+        PizzaSize()
+        {
+
+        }
+
     }
+
 }
