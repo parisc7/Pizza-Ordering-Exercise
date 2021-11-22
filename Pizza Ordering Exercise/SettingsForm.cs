@@ -42,8 +42,8 @@ namespace Pizza_Ordering_Exercise
         {
             pizzaSizes.Add(new PizzaSize("Small", 6.5, 2));
             pizzaSizes.Add(new PizzaSize("Medium", 9.25, 3));
-            pizzaSizes.Add(new PizzaSize("Large", 12.00, 3));
-            pizzaSizes.Add(new PizzaSize("XLarge", 13.75, 3));
+            pizzaSizes.Add(new PizzaSize("Large", 12.00, 4));
+            pizzaSizes.Add(new PizzaSize("XLarge", 13.75, 5));
         }
 
         private void InitializeIngridients()

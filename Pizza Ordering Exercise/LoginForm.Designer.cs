@@ -31,14 +31,15 @@
             this.logInLabel = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.logInButton = new System.Windows.Forms.Button();
             this.clearLabel = new System.Windows.Forms.Label();
             this.passworTextBox = new System.Windows.Forms.TextBox();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.exitButton = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.registerButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -48,7 +49,7 @@
             // 
             this.logInLabel.AutoSize = true;
             this.logInLabel.Font = new System.Drawing.Font("Bauhaus 93", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logInLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.logInLabel.ForeColor = System.Drawing.Color.Black;
             this.logInLabel.Location = new System.Drawing.Point(106, 199);
             this.logInLabel.Name = "logInLabel";
             this.logInLabel.Size = new System.Drawing.Size(208, 45);
@@ -58,7 +59,7 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(39, 369);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(46, 336);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(295, 1);
             this.flowLayoutPanel1.TabIndex = 3;
@@ -66,15 +67,84 @@
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(39, 443);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(46, 410);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(295, 1);
             this.flowLayoutPanel2.TabIndex = 3;
             // 
+            // logInButton
+            // 
+            this.logInButton.BackColor = System.Drawing.Color.Chocolate;
+            this.logInButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.logInButton.FlatAppearance.BorderSize = 0;
+            this.logInButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logInButton.Font = new System.Drawing.Font("Bahnschrift", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logInButton.ForeColor = System.Drawing.Color.Black;
+            this.logInButton.Location = new System.Drawing.Point(46, 447);
+            this.logInButton.Name = "logInButton";
+            this.logInButton.Size = new System.Drawing.Size(327, 36);
+            this.logInButton.TabIndex = 7;
+            this.logInButton.Text = "LOG IN";
+            this.logInButton.UseVisualStyleBackColor = false;
+            this.logInButton.Click += new System.EventHandler(this.logInButton_Click);
+            // 
+            // clearLabel
+            // 
+            this.clearLabel.AutoSize = true;
+            this.clearLabel.BackColor = System.Drawing.Color.White;
+            this.clearLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.clearLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clearLabel.ForeColor = System.Drawing.Color.Black;
+            this.clearLabel.Location = new System.Drawing.Point(288, 419);
+            this.clearLabel.Name = "clearLabel";
+            this.clearLabel.Size = new System.Drawing.Size(111, 20);
+            this.clearLabel.TabIndex = 1;
+            this.clearLabel.Text = "Clear Fields";
+            this.clearLabel.Click += new System.EventHandler(this.clearLabel_Click);
+            // 
+            // passworTextBox
+            // 
+            this.passworTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.passworTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passworTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.passworTextBox.Location = new System.Drawing.Point(91, 378);
+            this.passworTextBox.Multiline = true;
+            this.passworTextBox.Name = "passworTextBox";
+            this.passworTextBox.PasswordChar = '*';
+            this.passworTextBox.Size = new System.Drawing.Size(250, 26);
+            this.passworTextBox.TabIndex = 6;
+            // 
+            // nameTextBox
+            // 
+            this.nameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.nameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
+            this.nameTextBox.Location = new System.Drawing.Point(91, 304);
+            this.nameTextBox.Multiline = true;
+            this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.Size = new System.Drawing.Size(250, 26);
+            this.nameTextBox.TabIndex = 6;
+            // 
+            // exitButton
+            // 
+            this.exitButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.exitButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.exitButton.FlatAppearance.BorderSize = 0;
+            this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitButton.ForeColor = System.Drawing.Color.Black;
+            this.exitButton.Location = new System.Drawing.Point(172, 531);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(76, 31);
+            this.exitButton.TabIndex = 7;
+            this.exitButton.Text = "EXIT";
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::Pizza_Ordering_Exercise.Properties.Resources.padlock_security_shield_lock_protection_icon_logo_beautiful_design_fully_editable_commercial_print_media_web_any_166831929;
-            this.pictureBox3.Location = new System.Drawing.Point(39, 398);
+            this.pictureBox3.Location = new System.Drawing.Point(46, 365);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(39, 39);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -84,7 +154,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Pizza_Ordering_Exercise.Properties.Resources.istockphoto_1270368615_170667a;
-            this.pictureBox2.Location = new System.Drawing.Point(39, 322);
+            this.pictureBox2.Location = new System.Drawing.Point(46, 289);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(39, 39);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -101,74 +171,21 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // logInButton
+            // registerButton
             // 
-            this.logInButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.logInButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.logInButton.FlatAppearance.BorderSize = 0;
-            this.logInButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.logInButton.Font = new System.Drawing.Font("Bahnschrift", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logInButton.ForeColor = System.Drawing.Color.White;
-            this.logInButton.Location = new System.Drawing.Point(39, 480);
-            this.logInButton.Name = "logInButton";
-            this.logInButton.Size = new System.Drawing.Size(327, 36);
-            this.logInButton.TabIndex = 7;
-            this.logInButton.Text = "LOG IN";
-            this.logInButton.UseVisualStyleBackColor = false;
-            this.logInButton.Click += new System.EventHandler(this.logInButton_Click);
-            // 
-            // clearLabel
-            // 
-            this.clearLabel.AutoSize = true;
-            this.clearLabel.BackColor = System.Drawing.Color.White;
-            this.clearLabel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.clearLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clearLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.clearLabel.Location = new System.Drawing.Point(281, 452);
-            this.clearLabel.Name = "clearLabel";
-            this.clearLabel.Size = new System.Drawing.Size(111, 20);
-            this.clearLabel.TabIndex = 1;
-            this.clearLabel.Text = "Clear Fields";
-            this.clearLabel.Click += new System.EventHandler(this.clearLabel_Click);
-            // 
-            // passworTextBox
-            // 
-            this.passworTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.passworTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passworTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.passworTextBox.Location = new System.Drawing.Point(84, 411);
-            this.passworTextBox.Multiline = true;
-            this.passworTextBox.Name = "passworTextBox";
-            this.passworTextBox.PasswordChar = '*';
-            this.passworTextBox.Size = new System.Drawing.Size(250, 26);
-            this.passworTextBox.TabIndex = 6;
-            // 
-            // nameTextBox
-            // 
-            this.nameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.nameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.nameTextBox.Location = new System.Drawing.Point(84, 337);
-            this.nameTextBox.Multiline = true;
-            this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(250, 26);
-            this.nameTextBox.TabIndex = 6;
-            // 
-            // exitButton
-            // 
-            this.exitButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.exitButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.exitButton.FlatAppearance.BorderSize = 0;
-            this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.exitButton.Location = new System.Drawing.Point(172, 522);
-            this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(76, 31);
-            this.exitButton.TabIndex = 7;
-            this.exitButton.Text = "EXIT";
-            this.exitButton.UseVisualStyleBackColor = true;
-            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            this.registerButton.BackColor = System.Drawing.Color.Chocolate;
+            this.registerButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.registerButton.FlatAppearance.BorderSize = 0;
+            this.registerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.registerButton.Font = new System.Drawing.Font("Bahnschrift", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.registerButton.ForeColor = System.Drawing.Color.Black;
+            this.registerButton.Location = new System.Drawing.Point(46, 489);
+            this.registerButton.Name = "registerButton";
+            this.registerButton.Size = new System.Drawing.Size(327, 36);
+            this.registerButton.TabIndex = 7;
+            this.registerButton.Text = "Register";
+            this.registerButton.UseVisualStyleBackColor = false;
+            this.registerButton.Click += new System.EventHandler(this.logInButton_Click);
             // 
             // LogInForm
             // 
@@ -181,6 +198,7 @@
             this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.passworTextBox);
             this.Controls.Add(this.clearLabel);
+            this.Controls.Add(this.registerButton);
             this.Controls.Add(this.logInButton);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.pictureBox3);
@@ -213,5 +231,6 @@
         private System.Windows.Forms.TextBox passworTextBox;
         private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.Button registerButton;
     }
 }

@@ -37,7 +37,6 @@ namespace Pizza_Ordering_Exercise
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.deliveryMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.exitButton = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -46,10 +45,13 @@ namespace Pizza_Ordering_Exercise
             this.totalPriceTextBox = new System.Windows.Forms.TextBox();
             this.freeIngridientsTextBox = new System.Windows.Forms.TextBox();
             this.clearFormButton = new System.Windows.Forms.Button();
+            this.numOfIngridientsLabel = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.manageUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.ingridientsGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // OrderButton
@@ -120,40 +122,32 @@ namespace Pizza_Ordering_Exercise
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(759, 175);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(758, 175);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(94, 16);
+            this.label5.Size = new System.Drawing.Size(131, 20);
             this.label5.TabIndex = 5;
             this.label5.Text = "Delivery Time:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(759, 245);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(758, 239);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(75, 16);
+            this.label6.Size = new System.Drawing.Size(107, 20);
             this.label6.TabIndex = 6;
             this.label6.Text = "Total Price:";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Pizza_Ordering_Exercise.Properties.Resources.pizza_hut_pepperoni_pizza;
-            this.pictureBox1.Location = new System.Drawing.Point(864, 10);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(169, 98);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            // 
             // deliveryMaskedTextBox
             // 
+            this.deliveryMaskedTextBox.BackColor = System.Drawing.Color.Chocolate;
             this.deliveryMaskedTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.deliveryMaskedTextBox.Location = new System.Drawing.Point(864, 176);
+            this.deliveryMaskedTextBox.Location = new System.Drawing.Point(953, 175);
             this.deliveryMaskedTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.deliveryMaskedTextBox.Mask = "00:00";
             this.deliveryMaskedTextBox.Name = "deliveryMaskedTextBox";
-            this.deliveryMaskedTextBox.Size = new System.Drawing.Size(82, 15);
+            this.deliveryMaskedTextBox.Size = new System.Drawing.Size(48, 15);
             this.deliveryMaskedTextBox.TabIndex = 8;
             this.deliveryMaskedTextBox.ValidatingType = typeof(System.DateTime);
             // 
@@ -175,7 +169,8 @@ namespace Pizza_Ordering_Exercise
             this.menuStrip1.BackColor = System.Drawing.Color.Gray;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
+            this.fileToolStripMenuItem,
+            this.manageUsersToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1046, 28);
@@ -201,16 +196,18 @@ namespace Pizza_Ordering_Exercise
             // 
             // totalPriceTextBox
             // 
-            this.totalPriceTextBox.Location = new System.Drawing.Point(864, 239);
+            this.totalPriceTextBox.BackColor = System.Drawing.Color.Chocolate;
+            this.totalPriceTextBox.Location = new System.Drawing.Point(953, 239);
             this.totalPriceTextBox.Name = "totalPriceTextBox";
-            this.totalPriceTextBox.Size = new System.Drawing.Size(100, 22);
+            this.totalPriceTextBox.Size = new System.Drawing.Size(66, 22);
             this.totalPriceTextBox.TabIndex = 13;
             // 
             // freeIngridientsTextBox
             // 
-            this.freeIngridientsTextBox.Location = new System.Drawing.Point(864, 136);
+            this.freeIngridientsTextBox.BackColor = System.Drawing.Color.Chocolate;
+            this.freeIngridientsTextBox.Location = new System.Drawing.Point(953, 136);
             this.freeIngridientsTextBox.Name = "freeIngridientsTextBox";
-            this.freeIngridientsTextBox.Size = new System.Drawing.Size(66, 22);
+            this.freeIngridientsTextBox.Size = new System.Drawing.Size(32, 22);
             this.freeIngridientsTextBox.TabIndex = 14;
             // 
             // clearFormButton
@@ -226,23 +223,39 @@ namespace Pizza_Ordering_Exercise
             this.clearFormButton.UseVisualStyleBackColor = false;
             this.clearFormButton.Click += new System.EventHandler(this.clearFormButton_Click);
             // 
+            // numOfIngridientsLabel
+            // 
+            this.numOfIngridientsLabel.AutoSize = true;
+            this.numOfIngridientsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numOfIngridientsLabel.Location = new System.Drawing.Point(759, 136);
+            this.numOfIngridientsLabel.Name = "numOfIngridientsLabel";
+            this.numOfIngridientsLabel.Size = new System.Drawing.Size(172, 18);
+            this.numOfIngridientsLabel.TabIndex = 15;
+            this.numOfIngridientsLabel.Text = "Number Of Ingridients";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Pizza_Ordering_Exercise.Properties.Resources.pizza_hut_pepperoni_pizza;
+            this.pictureBox1.Location = new System.Drawing.Point(864, 10);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(169, 98);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
+            // manageUsersToolStripMenuItem
+            // 
+            this.manageUsersToolStripMenuItem.Name = "manageUsersToolStripMenuItem";
+            this.manageUsersToolStripMenuItem.Size = new System.Drawing.Size(116, 24);
+            this.manageUsersToolStripMenuItem.Text = "Manage &Users";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Chocolate;
             this.ClientSize = new System.Drawing.Size(1046, 452);
-            this.Controls.Add(this.freeIngridientsTextBox);
-            this.Controls.Add(this.totalPriceTextBox);
-            this.Controls.Add(this.clearFormButton);
-            this.Controls.Add(this.exitButton);
-            this.Controls.Add(this.deliveryMaskedTextBox);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.ingridientsGroupBox);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.OrderButton);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -254,9 +267,9 @@ namespace Pizza_Ordering_Exercise
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.ingridientsGroupBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -270,7 +283,6 @@ namespace Pizza_Ordering_Exercise
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.MaskedTextBox deliveryMaskedTextBox;
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.ListView listView1;
@@ -282,6 +294,9 @@ namespace Pizza_Ordering_Exercise
         private System.Windows.Forms.FlowLayoutPanel ingridientsFlowLayoutPanel;
         private System.Windows.Forms.TextBox freeIngridientsTextBox;
         private System.Windows.Forms.Button clearFormButton;
+        private System.Windows.Forms.Label numOfIngridientsLabel;
+        private System.Windows.Forms.ToolStripMenuItem manageUsersToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

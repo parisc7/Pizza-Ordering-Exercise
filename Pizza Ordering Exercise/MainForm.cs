@@ -20,7 +20,6 @@ namespace Pizza_Ordering_Exercise
         public int notThat;
         public double totalPrice = 0.0;
         public double firstPrice = 0.0;
-        public DataGridView pizzaSizeDataGridView { get; }
         public SettingsForm SettingsForm = new SettingsForm();
 
         SettingsForm settingForm = new SettingsForm();
@@ -90,6 +89,7 @@ namespace Pizza_Ordering_Exercise
                     extraIngridient = notThat * ingridients.Price;
                 }
                 totalPrice = firstPrice + extraIngridient;
+               // MessageBox.Show($"{ingridients.Name}{ingridients.Price} added : {ingridientsCheckBox.Checked}");
             }
             else
             {
@@ -98,7 +98,7 @@ namespace Pizza_Ordering_Exercise
 
             totalPriceTextBox.Text=totalPrice.ToString("C");
 
-            //   MessageBox.Show($"{ingridients.Name}{ingridients.Price} Checked : {ingridientsCheckBox.Checked}");
+           
         }
 
         private void SizesRadioButton_CheckedChanged(object sender, System.EventArgs e)

@@ -150,7 +150,7 @@ namespace Pizza_Ordering_Exercise
             this.Name = "SettingsForm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SettingsForm";
+            this.Text = "Settings";
             this.Load += new System.EventHandler(this.SettingsForm_Load);
             this.sizesGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pizzaSizeDataGridView)).EndInit();
