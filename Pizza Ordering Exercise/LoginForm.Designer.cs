@@ -49,11 +49,11 @@
             this.logInLabel.AutoSize = true;
             this.logInLabel.Font = new System.Drawing.Font("Bauhaus 93", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logInLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(117)))), ((int)(((byte)(214)))));
-            this.logInLabel.Location = new System.Drawing.Point(132, 203);
+            this.logInLabel.Location = new System.Drawing.Point(106, 199);
             this.logInLabel.Name = "logInLabel";
-            this.logInLabel.Size = new System.Drawing.Size(141, 45);
+            this.logInLabel.Size = new System.Drawing.Size(208, 45);
             this.logInLabel.TabIndex = 1;
-            this.logInLabel.Text = "LOG IN";
+            this.logInLabel.Text = "Welcome!";
             // 
             // flowLayoutPanel1
             // 

@@ -32,20 +32,22 @@ namespace Pizza_Ordering_Exercise
             this.OrderButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.sizeFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.ingridientsGroupBox = new System.Windows.Forms.GroupBox();
             this.ingridientsFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.deliveryMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.exitButton = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.totalPriceTextBox = new System.Windows.Forms.TextBox();
+            this.freeIngridientsTextBox = new System.Windows.Forms.TextBox();
+            this.clearFormButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.ingridientsGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -54,7 +56,7 @@ namespace Pizza_Ordering_Exercise
             // 
             this.OrderButton.BackColor = System.Drawing.Color.LightGray;
             this.OrderButton.ForeColor = System.Drawing.Color.Chocolate;
-            this.OrderButton.Location = new System.Drawing.Point(843, 337);
+            this.OrderButton.Location = new System.Drawing.Point(843, 302);
             this.OrderButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.OrderButton.Name = "OrderButton";
             this.OrderButton.Size = new System.Drawing.Size(103, 38);
@@ -85,17 +87,17 @@ namespace Pizza_Ordering_Exercise
             this.sizeFlowLayoutPanel.Size = new System.Drawing.Size(220, 223);
             this.sizeFlowLayoutPanel.TabIndex = 0;
             // 
-            // groupBox2
+            // ingridientsGroupBox
             // 
-            this.groupBox2.Controls.Add(this.ingridientsFlowLayoutPanel);
-            this.groupBox2.Location = new System.Drawing.Point(259, 119);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(465, 295);
-            this.groupBox2.TabIndex = 2;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Ingridients (Free Up to 3)";
+            this.ingridientsGroupBox.Controls.Add(this.ingridientsFlowLayoutPanel);
+            this.ingridientsGroupBox.Location = new System.Drawing.Point(259, 119);
+            this.ingridientsGroupBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ingridientsGroupBox.Name = "ingridientsGroupBox";
+            this.ingridientsGroupBox.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ingridientsGroupBox.Size = new System.Drawing.Size(465, 295);
+            this.ingridientsGroupBox.TabIndex = 2;
+            this.ingridientsGroupBox.TabStop = false;
+            this.ingridientsGroupBox.Text = "Ingridients (Free Up to 3)";
             // 
             // ingridientsFlowLayoutPanel
             // 
@@ -144,22 +146,22 @@ namespace Pizza_Ordering_Exercise
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
-            // maskedTextBox1
+            // deliveryMaskedTextBox
             // 
-            this.maskedTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.maskedTextBox1.Location = new System.Drawing.Point(864, 176);
-            this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.maskedTextBox1.Mask = "00:00";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(82, 15);
-            this.maskedTextBox1.TabIndex = 8;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            this.deliveryMaskedTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.deliveryMaskedTextBox.Location = new System.Drawing.Point(864, 176);
+            this.deliveryMaskedTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.deliveryMaskedTextBox.Mask = "00:00";
+            this.deliveryMaskedTextBox.Name = "deliveryMaskedTextBox";
+            this.deliveryMaskedTextBox.Size = new System.Drawing.Size(82, 15);
+            this.deliveryMaskedTextBox.TabIndex = 8;
+            this.deliveryMaskedTextBox.ValidatingType = typeof(System.DateTime);
             // 
             // exitButton
             // 
             this.exitButton.BackColor = System.Drawing.Color.LightGray;
             this.exitButton.ForeColor = System.Drawing.Color.Chocolate;
-            this.exitButton.Location = new System.Drawing.Point(843, 393);
+            this.exitButton.Location = new System.Drawing.Point(918, 374);
             this.exitButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(103, 38);
@@ -204,32 +206,54 @@ namespace Pizza_Ordering_Exercise
             this.totalPriceTextBox.Size = new System.Drawing.Size(100, 22);
             this.totalPriceTextBox.TabIndex = 13;
             // 
-            // Form1
+            // freeIngridientsTextBox
+            // 
+            this.freeIngridientsTextBox.Location = new System.Drawing.Point(864, 136);
+            this.freeIngridientsTextBox.Name = "freeIngridientsTextBox";
+            this.freeIngridientsTextBox.Size = new System.Drawing.Size(66, 22);
+            this.freeIngridientsTextBox.TabIndex = 14;
+            // 
+            // clearFormButton
+            // 
+            this.clearFormButton.BackColor = System.Drawing.Color.LightGray;
+            this.clearFormButton.ForeColor = System.Drawing.Color.Chocolate;
+            this.clearFormButton.Location = new System.Drawing.Point(786, 374);
+            this.clearFormButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.clearFormButton.Name = "clearFormButton";
+            this.clearFormButton.Size = new System.Drawing.Size(103, 38);
+            this.clearFormButton.TabIndex = 11;
+            this.clearFormButton.Text = "Clear";
+            this.clearFormButton.UseVisualStyleBackColor = false;
+            this.clearFormButton.Click += new System.EventHandler(this.clearFormButton_Click);
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Chocolate;
             this.ClientSize = new System.Drawing.Size(1046, 452);
+            this.Controls.Add(this.freeIngridientsTextBox);
             this.Controls.Add(this.totalPriceTextBox);
+            this.Controls.Add(this.clearFormButton);
             this.Controls.Add(this.exitButton);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.deliveryMaskedTextBox);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.ingridientsGroupBox);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.OrderButton);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Order";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
+            this.ingridientsGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -242,12 +266,12 @@ namespace Pizza_Ordering_Exercise
 
         private System.Windows.Forms.Button OrderButton;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox ingridientsGroupBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox deliveryMaskedTextBox;
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.MenuStrip menuStrip1;
@@ -256,6 +280,8 @@ namespace Pizza_Ordering_Exercise
         private System.Windows.Forms.TextBox totalPriceTextBox;
         private System.Windows.Forms.FlowLayoutPanel sizeFlowLayoutPanel;
         private System.Windows.Forms.FlowLayoutPanel ingridientsFlowLayoutPanel;
+        private System.Windows.Forms.TextBox freeIngridientsTextBox;
+        private System.Windows.Forms.Button clearFormButton;
     }
 }
 

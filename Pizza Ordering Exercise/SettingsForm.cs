@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Pizza_Ordering_Exercise
 {
-    
+
     public partial class SettingsForm : Form
     {
         public List<PizzaSize> pizzaSizes = new List<PizzaSize>();
@@ -26,8 +26,16 @@ namespace Pizza_Ordering_Exercise
             InitializeComponent();
             InitializeSize();
             InitializeIngridients();
-            LoadSizes();
-            LoadIngridients();
+        }
+
+        public SettingsForm(List<Ingridients> ingridients, List<PizzaSize> sizes)
+        {
+            InitializeComponent();
+            InitializeSize();
+            InitializeIngridients();
+
+            pizzaIngridients = ingridients;
+            pizzaSizes = sizes;
         }
 
         private void InitializeSize()
@@ -64,28 +72,22 @@ namespace Pizza_Ordering_Exercise
             IngridientsDataGridView.DataSource = new BindingList<Ingridients>(pizzaIngridients);
 
         }
-    
+
 
         private void sizesSaveButton_Click(object sender, EventArgs e)
         {
-            SaveSize();
+            if (sender == sizesSaveButton)
+            {
+                var serializedSize = JsonConvert.SerializeObject(pizzaSizes);
+                File.WriteAllText(PizzaSizesFile, serializedSize, Encoding.UTF8);
+                MessageBox.Show("Successfully saved the Pizza Sizes.", "Success", MessageBoxButtons.OK);
+            }
+
         }
 
         private void sizesResetButton_Click(object sender, EventArgs e)
         {
-            LoadSizes();
-        }
-
-        private void SaveSize()
-        {
-            var serializedSize = JsonConvert.SerializeObject(pizzaSizes);
-            File.WriteAllText(PizzaSizesFile, serializedSize, Encoding.UTF8);
-            MessageBox.Show("Successfully saved the Pizza Sizes.", "Success", MessageBoxButtons.OK);
-        }
-
-        private void LoadSizes()
-        {
-            if(File.Exists(PizzaSizesFile))
+            if (File.Exists(PizzaSizesFile))
             {
                 var jsonString = File.ReadAllText(PizzaSizesFile);
                 pizzaSizes = JsonConvert.DeserializeObject<List<PizzaSize>>(jsonString);
@@ -100,24 +102,18 @@ namespace Pizza_Ordering_Exercise
 
         private void ingridientsSaveButton_Click(object sender, EventArgs e)
         {
-            SaveIngridient();
+            if (sender == ingridientsSaveButton)
+            {
+                var serializedIng = JsonConvert.SerializeObject(pizzaIngridients);
+                System.IO.File.WriteAllText(PizzaIngridientsFile, serializedIng, Encoding.UTF8);
+                MessageBox.Show("Successfully saved the Pizza Sizes.", "Success", MessageBoxButtons.OK);
+            }
         }
 
-        private void SaveIngridient()
-        {
-            var serializedSize = JsonConvert.SerializeObject(pizzaIngridients);
-            File.WriteAllText(PizzaIngridientsFile, serializedSize, Encoding.UTF8);
-            MessageBox.Show("Successfully saved the Ingridients.", "Success", MessageBoxButtons.OK);
-
-        }
 
         private void ingridientsResetButton_Click(object sender, EventArgs e)
         {
-            LoadIngridients();
-        }
 
-        private void LoadIngridients()
-        {
             if (File.Exists(PizzaIngridientsFile))
             {
                 var jsonString = File.ReadAllText(PizzaIngridientsFile);
@@ -132,6 +128,7 @@ namespace Pizza_Ordering_Exercise
             }
         }
     }
-    
 }
+    
+
     
