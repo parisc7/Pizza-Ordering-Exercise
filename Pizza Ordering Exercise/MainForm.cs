@@ -27,14 +27,31 @@ namespace Pizza_Ordering_Exercise
         public MainForm()
         {
             InitializeComponent();
-            ShowButtons();
+            InitializeSizes();
+            InitializeIngridients();
         }
-        private void ShowButtons()
+       
+          private void InitializeSizes()
         {
+             sizeFlowLayoutPanel.Controls.Clear();
 
+            foreach (var sizes in SettingsForm.pizzaSizes)
+            {
+                var sizesRadioButton = new RadioButton();
+
+                sizesRadioButton.Text = sizes.Name;
+                sizesRadioButton.Tag = sizes;
+                sizesRadioButton.AutoSize = true;
+
+                sizesRadioButton.CheckedChanged += SizesRadioButton_CheckedChanged;
+
+                sizeFlowLayoutPanel.Controls.Add(sizesRadioButton);
+            }
+        }
+
+        private void InitializeIngridients()
+        {
             ingridientsFlowLayoutPanel.Controls.Clear();
-            sizeFlowLayoutPanel.Controls.Clear();
-
 
             foreach (var ingridients in SettingsForm.pizzaIngridients.OrderBy(x => x.Name))
             {
@@ -43,27 +60,13 @@ namespace Pizza_Ordering_Exercise
                 ingridientsCheckBox.Text = ingridients.Name;
                 ingridientsCheckBox.Tag = ingridients;
                 ingridientsCheckBox.AutoSize = true;
-                
+
                 ingridientsCheckBox.CheckedChanged += IngridientsCheckBox_CheckedChanged;
 
                 ingridientsFlowLayoutPanel.Controls.Add(ingridientsCheckBox);
-
-            }
-
-            foreach (var sizes in SettingsForm.pizzaSizes)
-            {
-                var sizesRadioButton = new RadioButton();
-               
-                sizesRadioButton.Text = sizes.Name;
-                sizesRadioButton.Tag = sizes;
-                sizesRadioButton.AutoSize = true;
-                
-                sizesRadioButton.CheckedChanged += SizesRadioButton_CheckedChanged;
-
-                sizeFlowLayoutPanel.Controls.Add(sizesRadioButton);
-
             }
         }
+           
 
         private void IngridientsCheckBox_CheckedChanged(object sender, System.EventArgs e)
         {
@@ -97,8 +100,6 @@ namespace Pizza_Ordering_Exercise
             }
 
             totalPriceTextBox.Text=totalPrice.ToString("C");
-
-           
         }
 
         private void SizesRadioButton_CheckedChanged(object sender, System.EventArgs e)
@@ -157,7 +158,8 @@ namespace Pizza_Ordering_Exercise
 
         private void clearFormButton_Click(object sender, EventArgs e)
         {
-            ShowButtons();
+            InitializeSizes();
+            InitializeIngridients();
             counts = 0;
             ingridientsGroupBox.Enabled=false;
             freeIngridientsTextBox.Text = "";
@@ -173,7 +175,8 @@ namespace Pizza_Ordering_Exercise
         {
             //SettingsForm settingForm = new SettingsForm();
             settingForm.ShowDialog();
-            ShowButtons();
+            InitializeSizes();
+            InitializeIngridients();
         }
 
     }

@@ -42,12 +42,12 @@ namespace Pizza_Ordering_Exercise
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.totalPriceTextBox = new System.Windows.Forms.TextBox();
             this.freeIngridientsTextBox = new System.Windows.Forms.TextBox();
             this.clearFormButton = new System.Windows.Forms.Button();
             this.numOfIngridientsLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.manageUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.ingridientsGroupBox.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -194,6 +194,12 @@ namespace Pizza_Ordering_Exercise
             this.settingsToolStripMenuItem.Text = "&Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
+            // manageUsersToolStripMenuItem
+            // 
+            this.manageUsersToolStripMenuItem.Name = "manageUsersToolStripMenuItem";
+            this.manageUsersToolStripMenuItem.Size = new System.Drawing.Size(116, 24);
+            this.manageUsersToolStripMenuItem.Text = "Manage &Users";
+            // 
             // totalPriceTextBox
             // 
             this.totalPriceTextBox.BackColor = System.Drawing.Color.Chocolate;
@@ -244,18 +250,12 @@ namespace Pizza_Ordering_Exercise
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
-            // manageUsersToolStripMenuItem
-            // 
-            this.manageUsersToolStripMenuItem.Name = "manageUsersToolStripMenuItem";
-            this.manageUsersToolStripMenuItem.Size = new System.Drawing.Size(116, 24);
-            this.manageUsersToolStripMenuItem.Text = "Manage &Users";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Chocolate;
-            this.ClientSize = new System.Drawing.Size(1046, 452);
+            this.ClientSize = new System.Drawing.Size(1046, 392);
             this.Controls.Add(this.OrderButton);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
